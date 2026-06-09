@@ -1,0 +1,36 @@
+.summary-card {
+  padding: 20px;
+  border-radius: 12px;
+  background: var(--mat-sys-surface-container-low);
+  box-shadow: var(--mat-sys-elevation-level2);
+
+  h2 {
+    margin-bottom: 16px;
+    font: var(--mat-sys-title-medium);
+    color: var(--mat-sys-on-surface);
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--mat-sys-outline-variant);
+
+    .label {
+      color: var(--mat-sys-on-surface-variant);
+    }
+
+    .value {
+      font-weight: 600;
+      color: var(--mat-sys-on-surface);
+
+      &.profit {
+        color: #2e7d32;
+      }
+
+      &.loss {
+        color: #c62828;
+      }
+    }
+  }
+}

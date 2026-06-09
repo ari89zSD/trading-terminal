@@ -1,0 +1,19 @@
+:host {
+  display: block;
+  height: 100%;
+  background: #1e1e1e;
+
+  /* Force dark theme tokens inside the sidebar */
+  --mat-sys-on-surface: white;
+  --mat-sys-on-surface-variant: white;
+  --mdc-list-item-label-text-color: white;
+  --mdc-list-item-supporting-text-color: white;
+}
+
+button.mat-mdc-list-item {
+  color: white;
+}
+
+button.mat-mdc-list-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}

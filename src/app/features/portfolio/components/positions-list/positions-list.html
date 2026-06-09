@@ -1,0 +1,17 @@
+<div class="positions">
+  <h2>Open Positions</h2>
+
+  <div class="position" *ngFor="let p of positions$ | async">
+    <div class="symbol">{{ p.symbol }}</div>
+    <div class="qty">{{ p.qty }}</div>
+    <div class="avg">Avg: {{ p.avgPrice | number:'1.2-2' }}</div>
+    <div class="current">Last: {{ p.currentPrice | number:'1.2-2' }}</div>
+
+    <div class="unrealized"
+         [class.profit]="p.unrealized >= 0"
+         [class.loss]="p.unrealized < 0">
+      {{ p.unrealized | number:'1.2-2' }}
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,28 @@
+.trades {
+  padding: 20px;
+
+  h2 {
+    margin-bottom: 16px;
+    color: var(--mat-sys-on-surface);
+    font: var(--mat-sys-title-medium);
+  }
+
+  .trade {
+    display: grid;
+    grid-template-columns: 80px 80px 80px 100px 120px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--mat-sys-outline-variant);
+
+    .symbol {
+      font-weight: 600;
+    }
+
+    .side.buy {
+      color: #2e7d32;
+    }
+
+    .side.sell {
+      color: #c62828;
+    }
+  }
+}

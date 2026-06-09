@@ -1,0 +1,42 @@
+.positions {
+  padding: 20px;
+
+  h2 {
+    margin-bottom: 16px;
+    color: var(--mat-sys-on-surface);
+    font: var(--mat-sys-title-medium);
+  }
+
+  .position {
+    display: grid;
+    grid-template-columns: 80px 60px 120px 120px 120px;
+    padding: 12px 0;
+
+    /* Light mode row background */
+    background: var(--mat-sys-surface);
+
+    /* Light mode text color */
+    color: var(--mat-sys-on-surface);
+
+    /* Light mode border */
+    border-bottom: 1px solid var(--mat-sys-outline-variant);
+
+    /* Hover state */
+    &:hover {
+      background: var(--mat-sys-surface-container-high);
+    }
+
+    .symbol {
+      font-weight: 600;
+      color: var(--mat-sys-on-surface);
+    }
+
+    .unrealized.profit {
+      color: #2e7d32; /* Material green 700 */
+    }
+
+    .unrealized.loss {
+      color: #c62828; /* Material red 700 */
+    }
+  }
+}

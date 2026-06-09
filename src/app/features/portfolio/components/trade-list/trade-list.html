@@ -1,0 +1,13 @@
+<div class="trades">
+  <h2>Executed Trades</h2>
+
+  <div class="trade" *ngFor="let t of trades$ | async">
+    <div class="symbol">{{ t.symbol }}</div>
+    <div class="side" [class.buy]="t.side === 'BUY'" [class.sell]="t.side === 'SELL'">
+      {{ t.side }}
+    </div>
+    <div class="qty">{{ t.qty }}</div>
+    <div class="price">@ {{ t.price }}</div>
+    <div class="time">{{ t.timestamp | date:'shortTime' }}</div>
+  </div>
+</div>

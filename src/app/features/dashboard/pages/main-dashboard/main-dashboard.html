@@ -1,0 +1,19 @@
+<div class="dashboard">
+
+  <!-- Watchlist Input -->
+  <div class="watchlist-input">
+    <input #symbolInput placeholder="Add symbol (e.g., NVDA)" />
+    <button (click)="addSymbol(symbolInput.value)">Add</button>
+  </div>
+
+  <!-- Watchlist List -->
+  <div class="watchlist-list">
+    <div class="item" *ngFor="let s of watchlist$ | async">
+      <span class="symbol">{{ s }}</span>
+      <button class="remove" (click)="removeSymbol(s)">×</button>
+    </div>
+  </div>
+
+  <!-- Quote Table -->
+  <app-quote-list></app-quote-list>
+</div>

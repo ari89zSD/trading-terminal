@@ -1,0 +1,55 @@
+<div class="order-panel" *ngIf="panel$ | async as panel" [class.open]="panel.open">
+
+  <div class="panel-header">
+    <span>Trade {{ panel.symbol }}</span>
+    <button class="close-btn" (click)="close()">×</button>
+  </div>
+
+  <div class="panel-body">
+
+    <!-- Buy/Sell Toggle -->
+    <div class="toggle-group">
+      <button 
+        [class.active]="side === 'BUY'" 
+        class="buy" 
+        (click)="side = 'BUY'">
+        Buy
+      </button>
+
+      <button 
+        [class.active]="side === 'SELL'" 
+        class="sell" 
+        (click)="side = 'SELL'">
+        Sell
+      </button>
+    </div>
+
+    <!-- Quantity -->
+    <div class="field">
+      <label>Quantity</label>
+      <input type="number" [(ngModel)]="qty" min="1" />
+    </div>
+
+    <!-- Order Type -->
+    <div class="field">
+      <label>Order Type</label>
+      <select [(ngModel)]="orderType">
+        <option value="MARKET">Market</option>
+        <option value="LIMIT">Limit</option>
+      </select>
+    </div>
+
+    <!-- Limit Price -->
+    <div class="field" *ngIf="orderType === 'LIMIT'">
+      <label>Limit Price</label>
+      <input type="number" [(ngModel)]="limitPrice" />
+    </div>
+
+    <!-- Submit -->
+    <button class="submit-btn" (click)="submit(panel.symbol)">
+      Submit Order
+    </button>
+
+  </div>
+
+</div>
