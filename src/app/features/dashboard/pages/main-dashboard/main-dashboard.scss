@@ -54,8 +54,13 @@
     color: white;
 
     .symbol {
-      font-weight: 600;
+      cursor: pointer;
+      font-weight: 500;
       margin-right: 8px;
+    }
+
+    .symbol:hover {
+      text-decoration: underline;
     }
 
     .remove {

@@ -9,11 +9,20 @@
   <!-- Watchlist List -->
   <div class="watchlist-list">
     <div class="item" *ngFor="let s of watchlist$ | async">
-      <span class="symbol">{{ s }}</span>
+      <span class="symbol" (click)="selectSymbol(s)">{{ s }}</span>
       <button class="remove" (click)="removeSymbol(s)">×</button>
     </div>
   </div>
 
   <!-- Quote Table -->
   <app-quote-list></app-quote-list>
+
+  <!-- Chart -->
+  <ng-container *ngIf="candles$ | async as candles">
+    <app-symbol-chart
+      *ngIf="selectedSymbol"
+      [symbol]="selectedSymbol!"
+      [candles]="candles">
+    </app-symbol-chart>
+  </ng-container>
 </div>

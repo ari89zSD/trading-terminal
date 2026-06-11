@@ -26,6 +26,7 @@ import { OrderPanel } from './core/layout/order-panel/order-panel/order-panel';
 import { TradeList } from './features/portfolio/components/trade-list/trade-list';
 import { PositionsList } from './features/portfolio/components/positions-list/positions-list';
 import { PortfolioSummary } from './features/portfolio/components/portfolio-summary/portfolio-summary';
+import { SymbolChart } from './features/dashboard/components/symbol-chart/symbol-chart';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { PortfolioSummary } from './features/portfolio/components/portfolio-summ
     OrderPanel,
     TradeList,
     PositionsList,
-    PortfolioSummary
+    PortfolioSummary,
+    SymbolChart
   ],
   imports: [
     BrowserModule,

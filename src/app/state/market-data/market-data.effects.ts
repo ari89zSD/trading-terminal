@@ -16,7 +16,7 @@ export class MarketDataEffects {
 
   constructor(
     private actions$: Actions,
-    private marketData: MarketDataService,
+    private marketDataService: MarketDataService,
     private store: Store,
     private orderExecution: OrderExecutionService,
     private portfolioService: PortfolioService
@@ -26,7 +26,7 @@ export class MarketDataEffects {
       this.actions$.pipe(
         ofType(MarketActions.connectMarketData),
         switchMap(() =>
-          this.marketData.connect().pipe(
+          this.marketDataService.connect().pipe(
             map(quote => MarketActions.quoteReceived({ quote }))
           )
         )
